@@ -1,0 +1,46 @@
+table {
+    border-style: solid;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border-style: solid;
+    border-width: thick;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    border-style: solid;
+    border-width: thin;
+    border-collapse: collapse;
+}
+
+
+.appTable {
+    overflow-x: auto;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+li a:hover{
+    background-color: #111;
+}
+
+
