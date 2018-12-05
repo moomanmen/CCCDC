@@ -1,8 +1,7 @@
 <?php
+//logs out the user and destroys session
 session_start();
 
 $_SESSION['user'] = '';
-
-header("Location: login.php");
-
 session_destroy();
+header("Location: login.php");

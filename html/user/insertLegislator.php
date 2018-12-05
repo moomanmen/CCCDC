@@ -1,15 +1,25 @@
 <?php
 
 session_start();
+if ($_SESSION['user'] != 'admin') {
+    header('Location: showApplications.php');
+    exit;
+}
 
 require 'dbconnect.php';
 
-//get variables from form
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$repeat = $_POST['repeat'];
-$budget = $_POST['budget'];
+function processText($text) {
+    $text = strip_tags($text);
+    $text = trim($text);
+    $text = htmlspecialchars($text);
+    return $text;
+}
+
+$name = processText($_POST['name']);
+$email = processText($_POST['email']);
+$password = processText($_POST['password']);
+$repeat = processText($_POST['repeat']);
+$budget = processText($_POST['budget']);
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "SELECT `username` from `users` WHERE `username` = '$email'";
@@ -29,7 +39,7 @@ else {
     $sql = $conn->prepare('INSERT INTO `Legislators` (`name`, `email`, `budget`) VALUES (?, ?, ?) ');
     $sql->bind_param("ssd", $name, $email, $budget);
     if ($sql->execute()) {
-        $sql->close;
+        $sql->close();
         $sql = $conn->prepare('INSERT INTO `users` (`username`, `password`) VALUES (?, ?) ');
         $sql->bind_param("ss", $email, $hash);
         if (!($sql->execute())) {

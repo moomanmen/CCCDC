@@ -1,4 +1,6 @@
 <?php
+//displays a page that lets users search the archive for applications
+//  users can search by year, or by organization
 session_start();
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");

@@ -1,10 +1,16 @@
 <?php
-
+//this script authenticates a user and displays an error if username and passoword are incorrect
 session_start();
 
+function processText($text) {
+    $text = strip_tags($text);
+    $text = trim($text);
+    $text = htmlspecialchars($text);
+    return $text;
+}
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = processText($_POST['username']);
+$password = processText($_POST['password']);
 
 
 require 'dbconnect.php';

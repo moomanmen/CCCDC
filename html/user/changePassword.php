@@ -1,8 +1,20 @@
 <?php
+//script that changes a users password, given old password, new password, and new password again
 session_start();
+if (!isset($_SESSION["user"])) {
+    header("Location: login.php");
+    exit;
+}
 
 if (isset($_POST['submit'])) {
     require 'dbconnect.php';
+
+    function processText($text) {
+        $text = strip_tags($text);
+        $text = trim($text);
+        $text = htmlspecialchars($text);
+        return $text;
+    }
 
     $user = $_SESSION['user'];
     $sql = "SELECT `password` FROM `users` WHERE `username` = '$user'";
@@ -11,9 +23,9 @@ if (isset($_POST['submit'])) {
     $row = $result->fetch_assoc();
     $hash = $row['password'];
 
-    $password = $_POST['currentPwd'];
-    $newPwd = $_POST['newPwd'];
-    $repeatPwd = $_POST['repeatPwd'];
+    $password = processText($_POST['currentPwd']);
+    $newPwd = processText($_POST['newPwd']);
+    $repeatPwd = processText($_POST['repeatPwd']);
 
     if (password_verify($password, $hash)) {
         if ($newPwd == $repeatPwd) {
@@ -32,7 +44,7 @@ if (isset($_POST['submit'])) {
     } else {
         $_SESSION['msg'] = "Incorrect password";
     }
-    
+
     $stmt->close();
     $conn->close();
 }
@@ -47,19 +59,19 @@ if (isset($_POST['submit'])) {
         <link rel='stylesheet' type='text/css' href='adminStyle.css'>
     </head>
     <body>
-        <?php include "nav_bar.php";?>
+        <?php include "nav_bar.php"; ?>
         <h2>Change Password</h2>
         <form action='changePassword.php' method='POST'>
             Current Password: <input type='password' name='currentPwd'></br>
             New Password: <input type='password' name='newPwd'></br>
             Repeat Password: <input type='password' name='repeatPwd'></br>
             <input type='submit' value='Submit' name='submit'></br>
-<?php
-if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
-    $_SESSION['msg'] = "";
-}
-?>
+            <?php
+            if (isset($_SESSION['msg'])) {
+                echo $_SESSION['msg'];
+                $_SESSION['msg'] = "";
+            }
+            ?>
         </form>
     </body>
 </html>

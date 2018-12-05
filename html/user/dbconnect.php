@@ -1,4 +1,5 @@
 <?php
+//connection to the database that all of the other scripts will use
 
 $dbname = 'CCCDC';
 $server = 'localhost';

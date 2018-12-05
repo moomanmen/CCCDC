@@ -1,14 +1,18 @@
 <?php
+//page that gets info from user to be used to update the budget of a legislator
+//TO-DO: use as modal instead of page
+
 session_start();
 if ($_SESSION['user'] != 'admin') {
     header('Location: showApplications.php');
+    exit:
 }
 
 
 $email = $_GET['email'];
 require 'dbconnect.php';
 
-$sql = "SELECT * FROM `legislators` WHERE `email` = '$email'";
+$sql = "SELECT * FROM `Legislators` WHERE `email` = '$email'";
 $result = $conn->query($sql);
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();

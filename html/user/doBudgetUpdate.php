@@ -1,16 +1,23 @@
 <?php
+//updates the budget of a legislator
 
 session_start();
 if ($_SESSION['user'] != 'admin') {
     header('Location: showApplications.php');
 }
 
+function processText($text) {
+    $text = strip_tags($text);
+    $text = trim($text);
+    $text = htmlspecialchars($text);
+    return $text;
+}
 
-$email = $_GET['email'];
-$budget = $_GET['budget'];
+$email = processText($_GET['email']);
+$budget = processText($_GET['budget']);
 require 'dbconnect.php';
 
-$sql = "UPDATE `legislators` SET `budget` = $budget WHERE `email` = '$email'";
+$sql = "UPDATE `Legislators` SET `budget` = $budget WHERE `email` = '$email'";
 
 if ($conn->query($sql)) {
     echo "Update Successful";
