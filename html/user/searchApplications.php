@@ -22,7 +22,7 @@ $org = processText($_GET['org']);
 
 //sets sql statement based on options selected oon search.php
 if ($year == $org) {
-    $sql = "SELECT * FROM `Applications`";
+    $sql = "SELECT * FROM `Applications` ORDER BY `id`";
 } else if ($org == 'all') {
     $sql = "SELECT * FROM `Applications` WHERE `year` = '$year' ORDER BY `id`";
 } else if ($year == 'all') {

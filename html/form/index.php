@@ -40,7 +40,7 @@ echo <<<HTMLTOP
     <form action="form.php" method="post" enctype="multipart/form-data">
       <h3>Colbert County Community Development Commission Grant Application</h3>
       <h5>Each recipient must be a governmental entity or agency thereof, or a public organization receiving public funds, or a tax-exempt entity for federal or state income tax purposes.</h5>
-      <div class="i">Although members of the Legislature will make a recommendation regarding funding, the Colbert County Community Development Commission has absolute discretion to award or reject any grant.</div>
+      <div class="i">Although members of the Legislature may make a recommendation regarding funding, the Colbert County Community Development Commission has absolute discretion to award or reject any grant.</div>
       <h4>THIS FORM MUST BE COMPLETED IN ITS ENTIRETY AND MUST BE ACCOMPANIED BY THE FOLLOWING:</h4>
       <div class="ol">
         <li>A W-9 Form, completed and signed by the agency to which the grant check is to be written.</li>
@@ -60,43 +60,43 @@ echo <<<HTMLTOP
       <div class="row">
         <h4>Contact Information</h4>
         <div class="input-group input-group-icon">
-          <input type="text" class="firstName" name="firstName" placeholder="First Name: John" required/>
+          <input type="text" class="firstName" name="firstName" placeholder="First Name" required/>
           <div class="input-icon"><i class="fa fa-user"></i></div>
         </div>
         <div class="input-group input-group-icon">
-          <input type="text" class="lastName" name="lastName" placeholder="Last Name: Doe" required/>
+          <input type="text" class="lastName" name="lastName" placeholder="Last Name" required/>
           <div class="input-icon"><i class="fa fa-user"></i></div>
         </div>
         <div class="input-group input-group-icon">
-          <input type="text" class="email" name="email" placeholder="E-Mail: john1@doe.com" required/>
+          <input type="text" class="email" name="email" placeholder="E-Mail" required/>
           <div class="input-icon"><i class="fa fa-envelope-square"></i></div>
         </div>
         <div class="input-group input-group-icon">
-          <input type="tel" class="phoneNumb" name="phoneNumber" placeholder="Phone Number: 123 456 7890" required/>
+          <input type="tel" class="phoneNumb" name="phoneNumber" placeholder="Phone Number" required/>
           <div class="input-icon"><i class="fa fa-phone">  </i></div>
         </div>
         <div class="input-group input-group-icon">
-          <input type="address" class="streetAdd" name="mailAddress" placeholder="Street Address: 123 Park Ave" required/>
+          <input type="address" class="streetAdd" name="mailAddress" placeholder="Street Address" required/>
           <div class="input-icon"><i class="fa fa-envelope"></i></div>
         </div>
 
         <div class="input-group input-group-icon">
-          <input type="address" class="streetTwo" name="streetTwo" placeholder="Address Line 2 (Optional): Apt. A1" />
+          <input type="address" class="streetTwo" name="streetTwo" placeholder="Address Line 2 (Optional)" />
           <div class="input-icon"><i class="fa fa-envelope-o"></i></div>
         </div>
 
         <div class="input-group input-group-icon">
-          <input type="address" class="city" name="city" placeholder="City: Tuscumbia" required/>
+          <input type="address" class="city" name="city" placeholder="City" required/>
           <div class="input-icon"><i class="fa fa-envelope"></i></div>
         </div>
 
         <div class="input-group input-group-icon">
-          <input type="address" class="state" name="state" placeholder="State: AL (or) Alabama" required/>
+          <input type="address" class="state" name="state" placeholder="State" required/>
           <div class="input-icon"><i class="fa fa-envelope-o"></i></div>
         </div>
 
         <div class="input-group input-group-icon">
-          <input type="address" class="zip" name="zip" placeholder="Zip Code: 35674" required/>
+          <input type="address" class="zip" name="zip" placeholder="Zip Code" required/>
           <div class="input-icon"><i class="fa fa-envelope"></i></div>
         </div>
       </div>
@@ -144,7 +144,7 @@ echo <<<HTMLBOT
 
         <div class="row">
           <div class="input-group input-group-icon">
-            <input type="text" class="taxId" name="taxId" placeholder="Federal Tax ID#: 12-3456789" required/>
+            <input type="text" class="taxId" name="taxId" placeholder="Federal Tax ID#" required/>
             <div class="input-icon"><i class="fa fa-info"></i></div>
           </div>
           <div class="input-group input-group-icon">
@@ -172,7 +172,7 @@ echo <<<HTMLBOT
         <h4>Description of Project</h4>
         <h5>Follow application requirements (use any attachments necessary) State the purpose promoted by the project, specifically what the grant will purchase, specific service(s) to be provided, and who will receive the services. If the grant is for scholarships,
           state the number to be given, criteria for receiving, and how and by whom recipients will be selected. If the grant is for incentives or awards, state the specific nature and purpose of the incentive or award. Although members of the Legislature
-          will make a recommendation regarding funding, the Colbert County Community Development Commission has absolute discretion to award or reject any grant.</h5>
+          may make a recommendation regarding funding, the Colbert County Community Development Commission has absolute discretion to award or reject any grant. ALL applicants must include an invoice, quote, or proof of cost with the application.</h5>
         <div class="input">
           <input type="text" name="description" placeholder="Type Description Here"></input>
         </div>
@@ -191,7 +191,7 @@ echo <<<HTMLBOT
             <li>To enhance the education of the citizenry through activities, expenditures for capital improvements or equipment, to promote literacy, learning, arts appreciation, public health, and mental health.
               <li>To promote activities that provide human and social services which reduce the hardships of old age, poor health, or poverty.
                 <li>To promote the marketability, yield or quality of Alabama-produced agricultural commodities.
-                  <li>To promote the preservation, restoration, development and propagation of Alabamaâ€™s natural resources, recreational facilities, environment, history, culture, transportation lanes, tourism, public safety, and historic landmarks and buildings.
+                  <li>To promote the preservation, restoration, development and propagation of Alabama's natural resources, recreational facilities, environment, history, culture, transportation lanes, tourism, public safety, and historic landmarks and buildings.
         </ol>
         <h4>Please note that the CCCDC adopted new rules on January 28, 2015 that all field trip requests will be limited to $750.00. </h4>
       </div>

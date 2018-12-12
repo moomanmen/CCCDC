@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 03, 2018 at 03:14 AM
+-- Generation Time: Dec 12, 2018 at 09:34 PM
 -- Server version: 10.1.26-MariaDB-0+deb9u1
 -- PHP Version: 7.2.11-2+0~20181015120801.9+stretch~1.gbp8105e0
 
@@ -54,29 +54,9 @@ CREATE TABLE `Applications` (
   `contact_phone` varchar(255) DEFAULT NULL,
   `relative_info` varchar(255) DEFAULT NULL,
   `relative_status` tinyint(1) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL
+  `description` varchar(255) DEFAULT NULL,
+  `comments` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `Applications`
---
-
-INSERT INTO `Applications` (`id`, `organization`, `first_name`, `last_name`, `amount_requested`, `amount_given`, `status`, `date_requested`, `year`, `legislator`, `file_path`, `email`, `phone_number`, `mail_address`, `street_two`, `city`, `state`, `zip_code`, `tax_id`, `contact_person`, `contact_phone`, `relative_info`, `relative_status`, `description`) VALUES
-('17-1', 'testorg2', 'test', 'man', 60000, NULL, 'new', '2017-11-14', '2017', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-1/', 'cmcallister@una.edu', '2566566526', '123 una st.', '', 'florence', 'alabama', '35632', '12-3456789', 'test man', '2566566526', 'yes i know test man personal!', 1, 'cheese it better then old cheese'),
-('17-2', 'testorg3', 'test', 'man', 60000, NULL, 'new', '2017-11-14', '2017', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-1/', 'cmcallister@una.edu', '2566566526', '123 una st.', '', 'florence', 'alabama', '35632', '12-3456789', 'test man', '2566566526', 'yes i know test man personal!', 1, 'cheese it better then old cheese'),
-('18-1', 'testorg', 'test', 'man', 60000, NULL, 'new', '2018-11-14', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-1/', 'cmcallister@una.edu', '2566566526', '123 una st.', '', 'florence', 'alabama', '35632', '12-3456789', 'test man', '2566566526', 'yes i know test man personal!', 1, 'cheese it better then old cheese'),
-('18-10', 'test org', 'test', 'man', 60000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-10/', 'testman@una.edu', '1234567890', '123 way dr.', '', 'florence', 'al', '35632', '123456789', 'test man', '1234567890', 'yes i know test man personal!', 1, 'cheese is better then old cheese'),
-('18-11', 'test org', 'test', 'man', 60000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-11/', 'testman@una.edu', '1234567890', '123 way dr.', '', 'florence', 'al', '35632', '123456789', 'test man', '1234567890', 'yes i know test man personal!', 1, 'cheese is better then old cheese'),
-('18-12', 'test org', 'test', 'man', 60000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-12/', 'testman@una.edu', '1234567890', '123 way dr.', '', 'florence', 'al', '35632', '123456789', 'test man', '1234567890', 'yes i know test man personal!', 1, 'cheese is better then old cheese'),
-('18-2', 'testorg2', 'test', 'man', 60000, NULL, 'new', '2018-11-14', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-1/', 'cmcallister@una.edu', '2566566526', '123 una st.', '', 'florence', 'alabama', '35632', '12-3456789', 'test man', '2566566526', 'yes i know test man personal!', 1, 'cheese it better then old cheese'),
-('18-3', 'una', 'test', 'man', 60000, NULL, 'new', '2018-11-27', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-3/', 'testman@una.edu', '1234567890', '123 way dr.', '', 'florence', 'al', '35632', '123456789', 'test man', '1234567890', 'yes i know test man personal!', 1, 'cheese is better then old cheese'),
-('18-4', 'una', 'test', 'man', 60000, NULL, 'new', '2018-11-27', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-4/', 'testman@una.edu', '1234567890', '123 way dr.', '', 'florence', 'al', '35632', '123456789', 'test man', '1234567890', 'yes i know test man personal!', 1, 'cheese is better then old cheese'),
-('18-5', 'example company', 'test', 'man', 10000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator4', '/home/admin/cccdcfiles/2018/18-5/', 'example@email.com', '123.456.7890', '123 main st.', 'apt. a1', 'florence', 'al', '35630', '12-3456789', 'example name', '111.111.1111', 'brother is on committee.', 1, ''),
-('18-6', 'example company', 'test', 'man', 10000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator4', '/home/admin/cccdcfiles/2018/18-6/', 'example@email.com', '123.456.7890', '123 main st.', 'apt. a1', 'florence', 'al', '35630', '12-3456789', 'example name', '111.111.1111', 'brother is on committee.', 1, ''),
-('18-7', 'example company', 'test', 'man', 10000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator4', '/home/admin/cccdcfiles/2018/18-7/', 'example@email.com', '123.456.7890', '123 main st.', 'apt. a1', 'florence', 'al', '35630', '12-3456789', 'example name', '111.111.1111', 'brother is on committee.', 1, ''),
-('18-8', 'test org', 'test', 'man', 60000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-8/', 'testman@una.edu', '1234567890', '123 way dr.', '', 'florence', 'al', '35632', '123456789', 'test man', '1234567890', 'yes i know test man personal!', 1, 'cheese is better then old cheese'),
-('18-9', 'test org', 'test', 'man', 60000, NULL, 'new', '2018-11-28', '2018', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-9/', 'testman@una.edu', '1234567890', '123 way dr.', '', 'florence', 'al', '35632', '123456789', 'test man', '1234567890', 'yes i know test man personal!', 1, 'cheese is better then old cheese'),
-('19-1', 'testorg4', 'test', 'man', 60000, NULL, 'new', '2019-11-14', '2019', '-legislator1-legislator2-legislator3-legislator4', '/home/admin/cccdcfiles/2018/18-1/', 'cmcallister@una.edu', '2566566526', '123 una st.', '', 'florence', 'alabama', '35632', '12-3456789', 'test man', '2566566526', 'yes i know test man personal!', 1, 'cheese it better then old cheese');
 
 -- --------------------------------------------------------
 
@@ -95,10 +75,9 @@ CREATE TABLE `Legislators` (
 --
 
 INSERT INTO `Legislators` (`name`, `email`, `budget`) VALUES
-('legislator1', 'legislator1@email.com', 50000),
-('legislator2', 'legislator2@email.com', 50000),
-('legislator3', 'legislator3@email.com', 50000),
-('legislator4', 'legislator4@email.com', 50000);
+('Andrew Sorrell House 3', 'jasorrell@comcast.net', 0),
+('Jaime Kiel House 18', 'jamiekiel@me.com', 0),
+('Larry Stutts Senate 6', 'larrycstutts@aol.com', 0);
 
 -- --------------------------------------------------------
 
@@ -117,9 +96,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(2, 'test', 'test'),
-(3, 'admin', '$2y$10$r7zezD2zjHdMJNTZol27iuKo5DTlqgcJ/3wJvxGEex0zS7FwK36R2'),
-(4, 'me@email.com', '$2y$10$UuJF0Uo4Dx0L9Je47F8HSezXdHVklJvNhqBu8/Pom1hOKhPkz6mBu');
+(3, 'admin', '$2y$10$rRfAfkFhrw/zGwiHGeBSwu0fr9wzVjeDzXqINDGPeFVjxhdCg7wue'),
+(9, 'jasorrell@comcast.net', '$2y$10$C/HGIcCgM8v0qer7wUJY5um8Amkv9zWJ92O.UJ/6GMmMbdIHFS1ey'),
+(10, 'larrycstutts@aol.com', '$2y$10$nwGarbMurGaDZyq4zijimuUs/BwandKhGCRhA7ZrYU7C6fCu/HYhi'),
+(11, 'jamiekiel@me.com', '$2y$10$EnIUEsrhRqWhNqtjwptUvewv2i8qQYyDvink13vUMMZpQvxN7Cwdq');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +131,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Database: `phpmyadmin`
 --
@@ -301,7 +281,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('admin', '[{\"db\":\"CCCDC\",\"table\":\"Applications\"},{\"db\":\"CCCDC\",\"table\":\"users\"},{\"db\":\"CCCDC\",\"table\":\"Legislators\"},{\"db\":\"mysql\",\"table\":\"columns_priv\"}]');
+('admin', '[{\"db\":\"CCCDC\",\"table\":\"Applications\"},{\"db\":\"CCCDC\",\"table\":\"Legislators\"},{\"db\":\"CCCDC\",\"table\":\"users\"},{\"db\":\"mysql\",\"table\":\"columns_priv\"}]');
 
 -- --------------------------------------------------------
 
@@ -377,7 +357,7 @@ CREATE TABLE `pma__table_uiprefs` (
 --
 
 INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('admin', 'CCCDC', 'Applications', '{\"CREATE_TIME\":\"2018-11-13 21:48:49\",\"col_order\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],\"col_visib\":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}', '2018-11-14 01:07:30');
+('admin', 'CCCDC', 'Applications', '{\"CREATE_TIME\":\"2018-11-13 21:48:49\"}', '2018-12-07 19:56:44');
 
 -- --------------------------------------------------------
 
@@ -424,7 +404,7 @@ CREATE TABLE `pma__userconfig` (
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
 ('Christian', '2018-10-16 01:22:19', '{\"collation_connection\":\"utf8mb4_unicode_ci\"}'),
-('admin', '2018-12-03 03:14:23', '{\"collation_connection\":\"utf8mb4_unicode_ci\",\"Console\\/Mode\":\"collapse\"}');
+('admin', '2018-12-12 21:34:41', '{\"collation_connection\":\"utf8mb4_unicode_ci\",\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 

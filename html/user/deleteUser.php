@@ -51,7 +51,7 @@ if ($result->num_rows == 1) {
     <body>
         <?php include "nav_bar.php";?>
         <h2>Delete User</h2>
-            <p id="response">Are you sure that you want to delete <?php echo $leg?>?
+            <p id="response">Are you sure that you want to delete <?php echo $email?>?
             
             <input type='button' value='Yes' onclick='deleteUser("<?php echo $email?>")' >
 

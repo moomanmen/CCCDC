@@ -5,7 +5,7 @@
 session_start();
 if ($_SESSION['user'] != 'admin') {
     header('Location: showApplications.php');
-    exit:
+    exit;
 }
 
 

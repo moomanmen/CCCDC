@@ -33,8 +33,10 @@ if (isset($_POST['submit'])) {
             $stmt = $conn->prepare("UPDATE `users` SET `password` = ? WHERE `username` = ?");
             $stmt->bind_param("ss", $hash, $user);
 
+
             if ($stmt->execute()) {
                 $_SESSION['msg'] = 'Password changed successfully';
+                $stmt->close();
             } else {
                 $_SESSION['msg'] = 'Password change failed';
             }
@@ -45,7 +47,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['msg'] = "Incorrect password";
     }
 
-    $stmt->close();
+
     $conn->close();
 }
 ?>

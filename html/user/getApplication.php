@@ -73,20 +73,37 @@ if ($result->num_rows == 1) {
     if ($row['amount_given'] == "") {
         $row['amount_given'] = 0;
     }
+
+	
+	if($row['relative_status'] == 0) {
+		$relative = "No";
+	} else {
+		$relative = "Yes";
+	}
+
     echo <<<EOL
         <p style='font-size:20px' id='id'> ID:  {$row['id']}
 	<p style='font-size:20px' id='name'> Applicant Name:  {$row['first_name']}  {$row['last_name']}
     	<p style='font-size:20px' id='email'> Applicant Email:   {$row['email']}
     	<p style='font-size:20px' id='phone_number'> Applicane Phone Number:   {$row['phone_number']}
     	<p style='font-size:20px' id='org'> Organization:   {$row['organization']}
+    	<p style='font-size:20px' id='address'> Adress:   {$row['mail_address']} {$row['street_2']} {$row['city']} {$row['state']} {$row['zip_code']}
+	<p style='font-size:20px' id='amount_req'> Tax Id:   {$row['tax_id']}	
+	<p style='font-size:20px' id='contact'> Contact:   {$row['contact_person']}
+	<p style='font-size:20px' id='contact_phone'> Contact Phone Number:   {$row['contact_phone']}	
     	<p style='font-size:20px' id='amount_req'> Amount Requested:   {$row['amount_requested']}
     	<p style='font-size:20px' id='amount_given'> Amount Given:   {$row['amount_given']}
     	<p style='font-size:20px' id='legislator'> Legislator(s) Applied To:   {$row['legislator']}
     	<p style='font-size:20px' id='date'> Date Requested: {$row['date_requested']}
     	<p style='font-size:20px' id='status'> Status:   {$row['status']}
     	<p style='font-size:20px' id='description'> Description:   {$row['description']}
-        <p style='font-size:20px' id='comments'> Comments:   {$row['comments']}
+	<p style='font-size:20px' id='relative'> Do they know a relative of a legislator or member of the CCCDC:  $relative. {$row['relative_info']}
+        
 EOL;
+	//displays comments if there are any
+	if($row['comments'] != ""){
+		echo "<p style='font-size:20px' id='comments'> Comments:   {$row['comments']}";
+	}
 } else {
     echo "Application not found";
 }

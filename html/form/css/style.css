@@ -194,6 +194,14 @@ input[type = "submit"]:hover {
   background-color: #4caf50;
   color: white;
 }
+
+input[name = "description"]{
+  height: 100px;
+  line-height: 180px;
+  text-align: justify;
+  width: 80%;
+}
+
 select {
   height: 3.4em;
   line-height: 2;
